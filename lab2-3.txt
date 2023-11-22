@@ -12,10 +12,10 @@ int main() {
     double stepen = 1;
     int i;
     printf("Radian: ");
-    scanf_s("%lf", &x);
+    scanf("%lf", &x);
     x = x * PI;
     printf("EPS:");
-    scanf_s("%lf", &eps);
+    scanf("%lf", &eps);
     while (fabs(chlen_r) >= eps) {
         sum_r += chlen_r;
         n++; 
