@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14159265358979323846
+
+int main() {
+    double x, eps, cos_r, cos_s;
+    double sum_r = 0;
+    double chlen_r = 1;
+    int n = 0;
+    int znak = 1;
+    long long fact = 1;
+    double stepen = 1;
+    int i;
+    printf("Radian: ");
+    scanf_s("%lf", &x);
+    x = x * PI;
+    printf("EPS:");
+    scanf_s("%lf", &eps);
+    while (fabs(chlen_r) >= eps) {
+        sum_r += chlen_r;
+        n++; 
+        znak = znak * (-1); 
+        fact = 1; 
+        for (i = 1; i <= 2 * n; i++) { 
+            fact *= i;
+        }
+        stepen = 1; 
+        for (i = 1; i <= 2 * n; i++) { 
+            stepen *= x;
+        }
+        chlen_r= znak * stepen / fact; 
+    }
+    cos_r = sum_r; 
+    cos_s = cos(x); 
+    printf("cos(%lf) po ryadu: %lf\n", x, cos_r);
+    printf("cos(%lf) standartu: %lf\n", x, cos_s);
+    printf("raznica: %lf\n", fabs(cos_r - cos_s));
+    return 0;
+}
