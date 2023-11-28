@@ -12,28 +12,34 @@ int main() {
     double stepen = 1;
     int i;
     printf("Radian: ");
-    scanf("%lf", &x);
-    x = x * PI;
+    double rez_1 = scanf_s("%lf", &x);
     printf("EPS:");
-    scanf("%lf", &eps);
-    while (fabs(chlen_r) >= eps) {
-        sum_r += chlen_r;
-        n++; 
-        znak = znak * (-1); 
-        fact = 1; 
-        for (i = 1; i <= 2 * n; i++) { 
-            fact *= i;
+    double rez_2 = scanf_s("%lf", &eps);
+    if (rez_1 == 1 && rez_2 == 1) {
+        x = x * PI;
+        while (fabs(chlen_r) >= eps) {
+            sum_r += chlen_r;
+            n++;
+            znak = znak * (-1);
+            fact = 1;
+            for (i = 1; i <= 2 * n; i++) {
+                fact *= i;
+            }
+            stepen = 1;
+            for (i = 1; i <= 2 * n; i++) {
+                stepen *= x;
+            }
+            chlen_r = znak * stepen / fact;
         }
-        stepen = 1; 
-        for (i = 1; i <= 2 * n; i++) { 
-            stepen *= x;
-        }
-        chlen_r= znak * stepen / fact; 
+        cos_r = sum_r;
+        cos_s = cos(x);
+        printf("cos(%lf) po ryadu: %lf\n", x, cos_r);
+        printf("cos(%lf) standartu: %lf\n", x, cos_s);
+        printf("raznica: %lf\n", fabs(cos_r - cos_s));
     }
-    cos_r = sum_r; 
-    cos_s = cos(x); 
-    printf("cos(%lf) po ryadu: %lf\n", x, cos_r);
-    printf("cos(%lf) standartu: %lf\n", x, cos_s);
-    printf("raznica: %lf\n", fabs(cos_r - cos_s));
+    else
+    {
+        printf("WRONG DATA");
+    }
     return 0;
 }
