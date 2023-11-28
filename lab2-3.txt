@@ -12,9 +12,9 @@ int main() {
     double stepen = 1;
     int i;
     printf("Radian: ");
-    double rez_1 = scanf_s("%lf", &x);
+    double rez_1 = scanf("%lf", &x);
     printf("EPS:");
-    double rez_2 = scanf_s("%lf", &eps);
+    double rez_2 = scanf("%lf", &eps);
     if (rez_1 == 1 && rez_2 == 1) {
         x = x * PI;
         while (fabs(chlen_r) >= eps) {
