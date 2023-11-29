@@ -12,9 +12,9 @@ int main() {
     double stepen = 1;
     int i;
     printf("Radian: ");
-    double rez_1 = scanf("%lf", &x);
+    double rez_1 = scanf_s("%lf", &x);
     printf("EPS:");
-    double rez_2 = scanf("%lf", &eps);
+    double rez_2 = scanf_s("%lf", &eps);
     if (rez_1 == 1 && rez_2 == 1) {
         x = x * PI;
         while (fabs(chlen_r) >= eps) {
@@ -34,7 +34,7 @@ int main() {
         cos_r = sum_r;
         cos_s = cos(x);
         printf("cos(%lf) po ryadu: %lf\n", x, cos_r);
-        printf("cos(%lf) standartu: %lf\n", x, cos_s);
+        printf("cos(%lf) standart: %lf\n", x, cos_s);
         printf("raznica: %lf\n", fabs(cos_r - cos_s));
     }
     else
