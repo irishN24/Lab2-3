@@ -2,28 +2,27 @@
 #include <math.h>
 
 int main() {
-	int x1;
+	double x;
 	double eps;
-	double rez = scanf("%d%lf\n", &x1, &eps);
+	printf("Введите x, eps:\n");
+	double rez = scanf("%lf%lf", &x, &eps);
+	double stx = x*x;
 	double ch = 1;
-	double sum = 0;
-	int k = 0;
-	double y1;
+	int F = 2;
+	int k = -1;
+	int i = 2;
 	
 	if (rez == 2) {
-		double y2 = cos(x1);
-		while (ch > eps) {
-			k++;
-			int i, F;
-			while (i <= k) {
-				F = F * i;
-				i++;
-			}
-			for (int s = k; s <= k; k *= 2) {
-
-			}
-			sum += ((-1)**k) * ((x ** 2)*k)/(2*k)!)
+		double y2 = cos(x);
+		while (stx / F >= eps) {
+			ch = ch + k * (stx/F);
+			i += 2;
+			stx = stx * x * x;
+			F = F * (i-1) * i;
+			k *=(-1);
 		}
+		printf("Cos Taylor: %lf\n", ch);
+		printf("Cos x: %lf\n", y2);
 		
 	}
 	else {
