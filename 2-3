@@ -4,26 +4,23 @@
 int main() {
 	double x;
 	double eps;
-	printf("Введите x, eps:\n");
+	printf("Enter x, eps:\n");
 	double rez = scanf("%lf%lf", &x, &eps);
-	double stx = x*x;
+	double summa = 1;
 	double ch = 1;
-	int F = 2;
-	int k = -1;
-	int i = 2;
-	
+	int n = 1;
 	if (rez == 2) {
 		double y2 = cos(x);
-		while (stx / F >= eps) {
-			ch = ch + k * (stx/F);
-			i += 2;
-			stx = stx * x * x;
-			F = F * (i-1) * i;
-			k *=(-1);
-		}
-		printf("Cos Taylor: %lf\n", ch);
-		printf("Cos x: %lf\n", y2);
 		
+		while (fabs(ch) > eps) {
+			ch *= ((-1) * x * x) / ((2 * n) * (2 * n - 1));
+			summa += ch;
+			n++;
+		}
+
+		printf("Cos Taylor: %lf\n", summa);
+		printf("Cos x: %lf\n", y2);
+
 	}
 	else {
 		printf("WRONG DATA!");
