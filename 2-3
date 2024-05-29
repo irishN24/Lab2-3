@@ -10,13 +10,13 @@ int main() {
 	double ch = 1;
 	int n = 1;
 	if (rez == 2) {
-		double y2 = cos(x);
-		
 		while (fabs(ch) > eps) {
 			ch *= ((-1) * x * x) / ((2 * n) * (2 * n - 1));
 			summa += ch;
 			n++;
 		}
+
+		double y2 = cos(x);
 
 		printf("Cos Taylor: %lf\n", summa);
 		printf("Cos x: %lf\n", y2);
