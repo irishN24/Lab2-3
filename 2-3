@@ -5,20 +5,25 @@ int main() {
 	double x;
 	double eps;
 	printf("Enter x, eps:\n");
-	double rez = scanf("%lf%lf", &x, &eps);
+	double rez = scanf_s("%lf%lf", &x, &eps);
+	double pi = 3.1415926535;
 	double summa = 1;
 	double ch = 1;
 	int n = 1;
-	if (rez == 2) {
-		while (fabs(ch) > eps) {
-			ch *= ((-1) * x * x) / ((2 * n) * (2 * n - 1));
-			summa += ch;
-			n++;
+	if ((rez == 2) && (fabs(eps)< 1)) {
+		if () {
+			while (fabs(ch) > eps) {
+				ch *= ((-1) * x * x) / ((2 * n) * (2 * n - 1));
+				summa += ch;
+				n++;
+			}
+			printf("Cos Taylor: %lf\n", summa);
 		}
-
+		else {
+			printf("Cos Taylor: Overflow\n");
+		}
 		double y2 = cos(x);
-
-		printf("Cos Taylor: %lf\n", summa);
+		
 		printf("Cos x: %lf\n", y2);
 
 	}
