@@ -6,24 +6,20 @@ int main() {
 	double eps;
 	printf("Enter x, eps:\n");
 	double rez = scanf_s("%lf%lf", &x, &eps);
-	double pi = 3.1415926535;
 	double summa = 1;
 	double ch = 1;
+	double pi = 3.1415926535;
 	int n = 1;
-	if ((rez == 2) && (fabs(eps)< 1)) {
-		if () {
-			while (fabs(ch) > eps) {
-				ch *= ((-1) * x * x) / ((2 * n) * (2 * n - 1));
-				summa += ch;
-				n++;
-			}
-			printf("Cos Taylor: %lf\n", summa);
-		}
-		else {
-			printf("Cos Taylor: Overflow\n");
-		}
+	if ((rez == 2) && (fabs(eps)<1)) {
 		double y2 = cos(x);
-		
+		x = fmod(x, 2 * pi); //остаток = числитель — (целое частное) * знаменателю
+		while (fabs(ch) > eps) {
+			ch *= ((-1) * x * x) / ((2 * n) * (2 * n - 1));
+			summa += ch;
+			n++;
+		}
+
+		printf("Cos Taylor: %lf\n", summa);
 		printf("Cos x: %lf\n", y2);
 
 	}
