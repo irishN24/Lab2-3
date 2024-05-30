@@ -12,7 +12,7 @@ int main() {
 	int n = 1;
 	if ((rez == 2) && (fabs(eps)<1)) {
 		double y2 = cos(x);
-		x = fmod(x, 2 * pi); //остаток = числитель — (целое частное) * знаменателю
+		x = fmod(x, 2 * pi);
 		while (fabs(ch) > eps) {
 			ch *= ((-1) * x * x) / ((2 * n) * (2 * n - 1));
 			summa += ch;
